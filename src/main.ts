@@ -15,12 +15,12 @@ async function bootstrap() {
       }
     }
   );
-  // app.useGlobalPipes(
-  //   new ValidationPipe({
-  //     whitelist: true,
-  //     forbidNonWhitelisted: true,
-  //   })
-  // );
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+      forbidNonWhitelisted: true,
+    })
+  );
   await app.listen();
   logger.log(`Orders Microservice is running on port ${envs.port}`);
 
